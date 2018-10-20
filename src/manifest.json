@@ -5,14 +5,14 @@
   "commands": [
     {
       "name": "Who last committed",
-      "identifier": "my-command-identifier",
-      "script": "./my-command.js"
+      "identifier": "who-last-committed",
+      "script": "./who-last-committed.js"
     }
   ],
   "menu": {
     "title": "Abstract Blame",
     "items": [
-      "my-command-identifier"
+      "who-last-committed"
     ]
   }
 }
