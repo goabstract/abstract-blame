@@ -15,25 +15,17 @@ module.exports = function (config, isPluginCommand) {
         buffer: "@skpm/buffer",
         events: path.join(__dirname, "src", "events")
     }
-    const CORE_MODULES = ["util", "console", "buffer", "path", "os"];
+
+    var exitingExternalsHandler = config.externals[0];
+    // exclude sketch's built in events module in favor of our wrapper
     config.externals = [
         (context, request, callback) => {
-            // sketch API
-            if (/^sketch\//.test(request) || request === 'sketch') {
-                return callback(null, `commonjs ${request}`)
+            if (request === "events") {
+                return callback();
             }
-            // core modules shipped in Sketch
-            if (CORE_MODULES.indexOf(request) !== -1) {
-                return callback(null, `commonjs ${request}`)
-            }
-            return callback()
-        },
-    ]
+            return exitingExternalsHandler(context, request, callback);
+        }
+    ];
 
-    delete config.module.rules[0].exclude
-    config.module.rules[0].include = [
-        path.join(__dirname, 'node_modules'),
-    ]
-
-    console.log(config)
+    // console.log(config)
 }
