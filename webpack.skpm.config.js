@@ -12,7 +12,6 @@ module.exports = function (config, isPluginCommand) {
     config.resolve.alias = {
         fs: "@skpm/fs",
         child_process: "@skpm/child_process",
-        events: path.join(__dirname, "src", "events"),
         debug: path.join(__dirname, "src", "debug")
     }
 
