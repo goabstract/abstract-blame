@@ -704,12 +704,11 @@
     yargs "^12.0.2"
     yesno "^0.0.1"
 
-"@skpm/child_process@0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@skpm/child_process/-/child_process-0.2.4.tgz#ef9a102b7cba1675c512a3be2890b05ac0c3df2c"
-  integrity sha512-ZALLT8+wDpwm7yOwYShS2L5DwH+WOOG0elenXOv3qGz3HQpYmLdYNSZzPRQ8xqevX4ufD0wjbeK7uoVAJOHBcw==
+"@skpm/child_process@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@skpm/child_process/-/child_process-0.3.0.tgz#306a0da6929aef9bfeef2621ab02c91b7e7ed3b9"
+  integrity sha512-cxOG05xMnVtsSSJv3PDk1+tNCgttmI5CmBLw3a1cHUghjwYez9NYkP9dgs3HSb3J8gfSWguxKPw/Wcz6SxkURg==
   dependencies:
-    "@skpm/events" "^0.1.1"
     cocoascript-class "^0.1.2"
 
 "@skpm/console@^0.1.7":
@@ -719,7 +718,7 @@
   dependencies:
     "@skpm/util" "^0.1.9"
 
-"@skpm/events@0.1.1", "@skpm/events@^0.1.1":
+"@skpm/events@0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@skpm/events/-/events-0.1.1.tgz#a7e62f380902e4570df94e406553f10ac98eb164"
   integrity sha512-PZnIsHXUERT/TB3RG1ZywW0VQpJ5mvKyGw2H71FSO8xHxtATm/pwivDpdGW/9lQCD5foQK5u/HpR9IDOc3iuiQ==
