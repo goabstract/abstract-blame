@@ -1,3 +1,4 @@
-import event_emitter from "@skpm/events"
+import ee from "@skpm/events"
 
-export const EventEmitter = event_emitter
+export const EventEmitter = ee;
+export default ee;

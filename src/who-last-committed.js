@@ -1,33 +1,31 @@
-import sketch from 'sketch'
 import "@babel/polyfill";
-import * as Abstract from "abstract-sdk"
+import sketch from 'sketch'
+import * as Abstract from "abstract-sdk";
 import * as AbstractUtils from "./abstract-utils"
 
-// const projectId = "ab8d54b0-502f-11e6-9379-dd323631859b";
-// const branchId = "aced3b20-d2fc-11e8-8d15-8f513088894f";
+const { UI } = sketch;
 
-export default async function(context) {
+const abstract = new Abstract.Client({
+  transport: Abstract.TRANSPORTS.CLI
+});
+
+export default function(context) {
   const key = AbstractUtils.documentKey(context.document);
   const projectId = AbstractUtils.projectId(key);
   const branchId = AbstractUtils.branchId(key);
 
-  log("pid: " + projectId);
-  log("bid: " + branchId);
+  var fiber = require("sketch/async").createFiber();
 
-  const abstract = Abstract.Client({
-    transport: Abstract.Transports.CLI
-  });
+  UI.message(`${projectId} / ${branchId}`);
 
-  try {
-    const commits = await abstract.commits.list({
-      projectId,
-      branchId
-    });
-  } catch(err) {
-    log(err)
-  }
+  abstract.commits.list({
+    projectId,
+    branchId
+  })
+  .then(commits => {
+    UI.message(`done`);
 
-  log("after commits fetch")
-
-  log(commits);
+    console.log(commits);
+    fiber.cleanup();
+  })
 }

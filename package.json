@@ -19,15 +19,16 @@
     "postinstall": "npm run build && skpm-link"
   },
   "devDependencies": {
-    "@skpm/builder": "^0.5.2",
-    "@babel/polyfill": "7.0.0"
+    "@babel/polyfill": "7.0.0",
+    "@skpm/builder": "^0.5.2"
   },
   "dependencies": {
-    "abstract-sdk": "^0.2.6",
-    "@skpm/fs": "0.2.0",
-    "@skpm/child_process": "0.2.4",
     "@skpm/buffer": "0.1.0",
-    "@skpm/events": "0.1.1"
+    "@skpm/child_process": "0.2.4",
+    "@skpm/console": "^0.1.7",
+    "@skpm/events": "0.1.1",
+    "@skpm/fs": "0.2.2",
+    "abstract-sdk": "^0.3.1"
   },
   "author": "Kevin Smith <kevin@kevinsmith.cc>"
 }
